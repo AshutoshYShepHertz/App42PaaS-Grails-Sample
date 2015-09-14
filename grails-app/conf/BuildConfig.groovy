@@ -10,7 +10,20 @@ grails.project.source.level = 1.7
 //grails.project.fork = [
 //   run: [maxMemory:1024, minMemory:64, debug:false, maxPerm:256]
 //]
+grails.project.repos.default = "AT"
+grails {
+    project {
+        repos {
+            AT {
+                url = "http://107.189.67.87/AT/"
+                username = "admin"
+                password = "password"
+            }
+        }
+    }
+}
 
+grails.project.groupId = "org.bob"
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -36,6 +49,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+		mavenRepo id:"Artifactory" , url:"http://107.189.67.87/simple/libs-snapshot-local/"
     }
 
     dependencies {
@@ -59,5 +73,6 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.3.2"
 
         compile ':cache:1.0.1'
+		build ":release:3.0.1"
     }
 }
