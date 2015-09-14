@@ -23,7 +23,7 @@ grails {
     }
 }
 
-grails.project.groupId = "org.bob"
+
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
